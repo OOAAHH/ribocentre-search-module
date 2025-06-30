@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索功能演示 - Ribocentre-Aptamer</title>
+    <link rel="stylesheet" href="../css/search.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .demo-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        .search-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .demo-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .feature-card h3 {
+            color: #495057;
+            margin-top: 0;
+        }
+        .sample-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .sample-query {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .sample-query:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">🔍 搜索功能演示</h1>
+        
+        <div class="demo-info">
+            <h3>📋 演示说明</h3>
+            <p>这是 Ribocentre-Aptamer 搜索功能的演示页面。输入关键词即可体验智能搜索功能，支持实时搜索、关键词高亮和相关性排序。</p>
+        </div>
+
+        <div class="search-section">
+            <h3>🔍 智能搜索</h3>
+            <input type="text" id="mainSearch" class="search-input" placeholder="请输入搜索关键词，如：ATP、thrombin、aptamer...">
+            
+            <div class="sample-queries">
+                <div class="sample-query" onclick="performSampleSearch('ATP aptamer')">ATP aptamer</div>
+                <div class="sample-query" onclick="performSampleSearch('thrombin')">thrombin</div>
+                <div class="sample-query" onclick="performSampleSearch('RNA structure')">RNA structure</div>
+                <div class="sample-query" onclick="performSampleSearch('binding affinity')">binding affinity</div>
+                <div class="sample-query" onclick="performSampleSearch('SELEX')">SELEX</div>
+            </div>
+        </div>
+
+        <!-- 搜索结果容器 -->
+        <div id="searchResultsOverlay" class="search-results-overlay">
+            <div id="searchResults" class="search-results-container">
+                <div class="search-results-header">
+                    <span id="searchResultsCount" class="search-results-count">Found 0 results</span>
+                    <button class="close-search-btn" onclick="closeSearchResults()">
+                        <i class="fas fa-times"></i>×
+                    </button>
+                </div>
+                <div id="searchResultsList" class="search-results-list"></div>
+            </div>
+        </div>
+
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>⚡ 实时搜索</h3>
+                <p>输入关键词即可实时显示搜索结果，无需点击搜索按钮，提供流畅的用户体验。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎯 智能匹配</h3>
+                <p>基于相关性评分算法，优先显示最相关的结果，支持标题、内容、标签等多字段搜索。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💡 关键词高亮</h3>
+                <p>搜索词在结果中自动高亮显示，帮助用户快速定位相关信息。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📱 响应式设计</h3>
+                <p>完美适配桌面和移动设备，在任何屏幕尺寸下都能提供优秀的搜索体验。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入搜索功能模块 -->
+    <script src="../js/search-utils.js"></script>
+    <script src="../js/search.js"></script>
+    
+    <script>
+        // 模拟搜索数据
+        const mockSearchData = [
+            {
+                title: "ATP aptamer",
+                category: "aptamer",
+                tags: "Type:RNA aptamer, Length:27, GC:63.0, Year:1995",
+                url: "#",
+                date: "1995-01-01",
+                content: "This aptamer binds to ATP with high specificity and affinity. It was selected through SELEX process."
+            },
+            {
+                title: "Thrombin aptamer",
+                category: "aptamer", 
+                tags: "Type:DNA aptamer, Length:15, GC:40.0, Year:1992",
+                url: "#",
+                date: "1992-01-01",
+                content: "A DNA aptamer that binds specifically to human thrombin protein with nanomolar affinity."
+            },
+            {
+                title: "RNA structure analysis",
+                category: "structure",
+                tags: "Type:analysis, RNA, secondary structure",
+                url: "#", 
+                date: "2020-01-01",
+                content: "Comprehensive analysis of RNA secondary and tertiary structures using computational methods."
+            },
+            {
+                title: "SELEX methodology",
+                category: "methodology",
+                tags: "Type:protocol, SELEX, selection",
+                url: "#",
+                date: "2018-01-01", 
+                content: "Systematic Evolution of Ligands by Exponential Enrichment (SELEX) is a method for selecting aptamers."
+            },
+            {
+                title: "Binding affinity measurements",
+                category: "analysis",
+                tags: "Type:measurement, Kd, affinity",
+                url: "#",
+                date: "2019-01-01",
+                content: "Methods for measuring binding affinity between aptamers and their target molecules."
+            }
+        ];
+
+        // 重写SearchUtils.fetchData以使用模拟数据
+        SearchUtils.fetchData = async function(paths) {
+            return new Promise(resolve => {
+                setTimeout(() => resolve(mockSearchData), 200);
+            });
+        };
+
+        // 示例搜索函数
+        function performSampleSearch(query) {
+            const searchInput = document.getElementById('mainSearch');
+            searchInput.value = query;
+            searchInput.focus();
+            SearchModule.performSearch();
+        }
+
+        // 关闭搜索结果
+        function closeSearchResults() {
+            SearchModule.closeSearchResults();
+        }
+
+        // 初始化搜索模块
+        document.addEventListener('DOMContentLoaded', () => {
+            SearchModule.init();
+            console.log('搜索演示页面加载完成');
+        });
+    </script>
+</body>
+</html> 
