@@ -31,7 +31,7 @@ We welcome feature suggestions! Please:
 # 1. Fork the repository on GitHub
 
 # 2. Clone your fork
-git clone https://github.com/yourusername/ribocentre-search-module.git
+git clone https://github.com/OOAAHH/ribocentre-search-module.git
 cd ribocentre-search-module
 
 # 3. Create a feature branch

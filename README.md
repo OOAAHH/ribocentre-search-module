@@ -1,9 +1,9 @@
 # 🔍 Ribocentre-Aptamer Search Module
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](https://github.com/yourusername/ribocentre-search-module)
+[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](https://github.com/OOAAHH/ribocentre-search-module)
 [![JavaScript](https://img.shields.io/badge/javascript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/ribocentre-search-module/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/OOAAHH/ribocentre-search-module/pulls)
 
 > 🧬 A powerful, intelligent search module designed specifically for RNA aptamer databases and bioinformatics research platforms.
 
@@ -19,7 +19,7 @@
 
 ## 🎬 Live Demo
 
-🌐 **[View Live Demo](https://yourusername.github.io/ribocentre-search-module/examples/basic_search_demo.html)**
+🌐 **[View Live Demo](https://OOAAHH.github.io/ribocentre-search-module/examples/basic_search_demo.html)**
 
 Try searching for:
 - `ATP aptamer`
@@ -32,7 +32,7 @@ Try searching for:
 ### Option 1: Download Release
 ```bash
 # Download the latest release
-wget https://github.com/yourusername/ribocentre-search-module/releases/latest/download/ribocentre_search_module_v2.0.zip
+wget https://github.com/OOAAHH/ribocentre-search-module/releases/latest/download/ribocentre_search_module_v2.0.zip
 
 # Extract files
 unzip ribocentre_search_module_v2.0.zip
@@ -40,18 +40,18 @@ unzip ribocentre_search_module_v2.0.zip
 
 ### Option 2: Clone Repository
 ```bash
-git clone https://github.com/yourusername/ribocentre-search-module.git
+git clone https://github.com/OOAAHH/ribocentre-search-module.git
 cd ribocentre-search-module
 ```
 
 ### Option 3: CDN (Coming Soon)
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yourusername/ribocentre-search-module@2.0.0/css/search.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OOAAHH/ribocentre-search-module@2.0.0/css/search.css">
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/yourusername/ribocentre-search-module@2.0.0/js/search-utils.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/yourusername/ribocentre-search-module@2.0.0/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OOAAHH/ribocentre-search-module@2.0.0/js/search-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OOAAHH/ribocentre-search-module@2.0.0/js/search.js"></script>
 ```
 
 ## 🚀 Quick Start
@@ -214,7 +214,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ribocentre-search-module.git
+git clone https://github.com/OOAAHH/ribocentre-search-module.git
 cd ribocentre-search-module
 
 # Start development server (if you have one)
@@ -226,15 +226,15 @@ open examples/basic_search_demo.html
 
 ### Contribution Types
 
-- 🐛 **Bug Reports**: [Report issues](https://github.com/yourusername/ribocentre-search-module/issues)
-- ✨ **Feature Requests**: [Suggest enhancements](https://github.com/yourusername/ribocentre-search-module/issues)
+- 🐛 **Bug Reports**: [Report issues](https://github.com/OOAAHH/ribocentre-search-module/issues)
+- ✨ **Feature Requests**: [Suggest enhancements](https://github.com/OOAAHH/ribocentre-search-module/issues)
 - 📖 **Documentation**: Improve docs and examples
 - 🧪 **Testing**: Add test cases and improve coverage
 - 🌐 **Translations**: Help translate to other languages
 
 ## 🏷️ Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags on this repository](https://github.com/yourusername/ribocentre-search-module/tags).
+We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags on this repository](https://github.com/OOAAHH/ribocentre-search-module/tags).
 
 ## 📄 License
 
@@ -243,8 +243,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📋 **Documentation**: Check our comprehensive docs first
-- 🐛 **Bug Reports**: [Create an issue](https://github.com/yourusername/ribocentre-search-module/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/ribocentre-search-module/discussions)
+- 🐛 **Bug Reports**: [Create an issue](https://github.com/OOAAHH/ribocentre-search-module/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/OOAAHH/ribocentre-search-module/discussions)
 - 📧 **Email**: contact@ribocentre-aptamer.org
 
 ## 🙏 Acknowledgments
@@ -255,10 +255,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📈 Project Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/ribocentre-search-module?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/ribocentre-search-module?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/ribocentre-search-module)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/ribocentre-search-module)
+![GitHub stars](https://img.shields.io/github/stars/OOAAHH/ribocentre-search-module?style=social)
+![GitHub forks](https://img.shields.io/github/forks/OOAAHH/ribocentre-search-module?style=social)
+![GitHub issues](https://img.shields.io/github/issues/OOAAHH/ribocentre-search-module)
+![GitHub last commit](https://img.shields.io/github/last-commit/OOAAHH/ribocentre-search-module)
 
 ## 🔗 Related Projects
 
@@ -275,7 +275,7 @@ If you use this search module in your research, please cite:
   author = {Ribocentre-Aptamer Team},
   title = {Ribocentre-Aptamer Search Module: Intelligent Search for Bioinformatics Databases},
   year = {2024},
-  url = {https://github.com/yourusername/ribocentre-search-module},
+  url = {https://github.com/OOAAHH/ribocentre-search-module},
   version = {2.0.0}
 }
 ```
