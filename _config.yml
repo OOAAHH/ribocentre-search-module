@@ -1,0 +1,38 @@
+title: "Ribocentre-Aptamer Search Module"
+description: "🔍 Intelligent search module for RNA aptamer databases and bioinformatics research platforms"
+url: "https://OOAAHH.github.io"
+baseurl: "/ribocentre-search-module"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - CHANGELOG.md
+  - LICENSE
+  - .github/
+
+# Include files
+include:
+  - _config.yml
+
+# GitHub Pages settings
+remote_theme: null
+theme: null
+
+# Collections
+collections_dir: ""
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default" 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搜索功能演示 - Ribocentre-Aptamer</title>
+    <title>Search Demo - Ribocentre-Aptamer</title>
     <link rel="stylesheet" href="../css/search.css">
     <style>
         body {
@@ -28,6 +28,16 @@
             font-size: 2.5rem;
             font-weight: 300;
         }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: #5a6fd8;
+        }
         .search-section {
             background: #f8f9fa;
             padding: 30px;
@@ -41,6 +51,7 @@
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s ease;
+            box-sizing: border-box;
         }
         .search-input:focus {
             outline: none;
@@ -88,20 +99,38 @@
         .sample-query:hover {
             background: #5a6fd8;
         }
+        .github-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid #e9ecef;
+        }
+        .github-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .github-info a:hover {
+            color: #5a6fd8;
+        }
     </style>
 </head>
 <body>
     <div class="demo-container">
-        <h1 class="demo-title">🔍 搜索功能演示</h1>
+        <a href="../index.html" class="back-link">← Back to Main Page</a>
+        
+        <h1 class="demo-title">🔍 Search Demo</h1>
         
         <div class="demo-info">
-            <h3>📋 演示说明</h3>
-            <p>这是 Ribocentre-Aptamer 搜索功能的演示页面。输入关键词即可体验智能搜索功能，支持实时搜索、关键词高亮和相关性排序。</p>
+            <h3>📋 Demo Instructions</h3>
+            <p>This is the Ribocentre-Aptamer search module demo. Enter keywords to experience intelligent search with real-time results, keyword highlighting, and relevance scoring.</p>
         </div>
 
         <div class="search-section">
-            <h3>🔍 智能搜索</h3>
-            <input type="text" id="mainSearch" class="search-input" placeholder="请输入搜索关键词，如：ATP、thrombin、aptamer...">
+            <h3>🔍 Intelligent Search</h3>
+            <input type="text" id="mainSearch" class="search-input" placeholder="Enter search keywords: ATP, thrombin, aptamer, SELEX...">
             
             <div class="sample-queries">
                 <div class="sample-query" onclick="performSampleSearch('ATP aptamer')">ATP aptamer</div>
@@ -112,13 +141,13 @@
             </div>
         </div>
 
-        <!-- 搜索结果容器 -->
+        <!-- Search Results Container -->
         <div id="searchResultsOverlay" class="search-results-overlay">
             <div id="searchResults" class="search-results-container">
                 <div class="search-results-header">
                     <span id="searchResultsCount" class="search-results-count">Found 0 results</span>
                     <button class="close-search-btn" onclick="closeSearchResults()">
-                        <i class="fas fa-times"></i>×
+                        ×
                     </button>
                 </div>
                 <div id="searchResultsList" class="search-results-list"></div>
@@ -127,84 +156,102 @@
 
         <div class="feature-list">
             <div class="feature-card">
-                <h3>⚡ 实时搜索</h3>
-                <p>输入关键词即可实时显示搜索结果，无需点击搜索按钮，提供流畅的用户体验。</p>
+                <h3>⚡ Real-time Search</h3>
+                <p>Type keywords and see instant results without clicking search buttons. Provides smooth user experience.</p>
             </div>
             
             <div class="feature-card">
-                <h3>🎯 智能匹配</h3>
-                <p>基于相关性评分算法，优先显示最相关的结果，支持标题、内容、标签等多字段搜索。</p>
+                <h3>🎯 Smart Matching</h3>
+                <p>Advanced relevance scoring algorithm prioritizes the most relevant results. Searches across title, content, and tags.</p>
             </div>
             
             <div class="feature-card">
-                <h3>💡 关键词高亮</h3>
-                <p>搜索词在结果中自动高亮显示，帮助用户快速定位相关信息。</p>
+                <h3>💡 Keyword Highlighting</h3>
+                <p>Search terms are automatically highlighted in results, helping users quickly locate relevant information.</p>
             </div>
             
             <div class="feature-card">
-                <h3>📱 响应式设计</h3>
-                <p>完美适配桌面和移动设备，在任何屏幕尺寸下都能提供优秀的搜索体验。</p>
+                <h3>📱 Responsive Design</h3>
+                <p>Perfect adaptation for desktop and mobile devices, providing excellent search experience on any screen size.</p>
             </div>
+        </div>
+
+        <div class="github-info">
+            <h3>🚀 Ready to Integrate?</h3>
+            <p>
+                <a href="https://github.com/OOAAHH/ribocentre-search-module">View on GitHub</a> • 
+                <a href="https://github.com/OOAAHH/ribocentre-search-module#quick-start">Quick Start Guide</a> • 
+                <a href="https://github.com/OOAAHH/ribocentre-search-module/blob/main/examples/integration_guide.md">Integration Guide</a>
+            </p>
+            <p>Only 3 lines of code needed for basic integration!</p>
         </div>
     </div>
 
-    <!-- 引入搜索功能模块 -->
+    <!-- Load Search Module -->
     <script src="../js/search-utils.js"></script>
     <script src="../js/search.js"></script>
     
     <script>
-        // 模拟搜索数据
+        // Mock search data for demo
         const mockSearchData = [
             {
                 title: "ATP aptamer",
                 category: "aptamer",
                 tags: "Type:RNA aptamer, Length:27, GC:63.0, Year:1995",
-                url: "#",
+                url: "https://github.com/OOAAHH/ribocentre-search-module",
                 date: "1995-01-01",
-                content: "This aptamer binds to ATP with high specificity and affinity. It was selected through SELEX process."
+                content: "This aptamer binds to ATP with high specificity and affinity. It was selected through SELEX process and shows excellent binding characteristics for molecular recognition."
             },
             {
                 title: "Thrombin aptamer",
                 category: "aptamer", 
                 tags: "Type:DNA aptamer, Length:15, GC:40.0, Year:1992",
-                url: "#",
+                url: "https://github.com/OOAAHH/ribocentre-search-module",
                 date: "1992-01-01",
-                content: "A DNA aptamer that binds specifically to human thrombin protein with nanomolar affinity."
+                content: "A DNA aptamer that binds specifically to human thrombin protein with nanomolar affinity. This was one of the first aptamers discovered and remains widely studied."
             },
             {
                 title: "RNA structure analysis",
                 category: "structure",
                 tags: "Type:analysis, RNA, secondary structure",
-                url: "#", 
+                url: "https://github.com/OOAAHH/ribocentre-search-module", 
                 date: "2020-01-01",
-                content: "Comprehensive analysis of RNA secondary and tertiary structures using computational methods."
+                content: "Comprehensive analysis of RNA secondary and tertiary structures using computational methods. Includes folding prediction algorithms and structural validation techniques."
             },
             {
                 title: "SELEX methodology",
                 category: "methodology",
                 tags: "Type:protocol, SELEX, selection",
-                url: "#",
+                url: "https://github.com/OOAAHH/ribocentre-search-module",
                 date: "2018-01-01", 
-                content: "Systematic Evolution of Ligands by Exponential Enrichment (SELEX) is a method for selecting aptamers."
+                content: "Systematic Evolution of Ligands by Exponential Enrichment (SELEX) is a method for selecting aptamers. This protocol describes the complete procedure from library design to final selection."
             },
             {
                 title: "Binding affinity measurements",
                 category: "analysis",
                 tags: "Type:measurement, Kd, affinity",
-                url: "#",
+                url: "https://github.com/OOAAHH/ribocentre-search-module",
                 date: "2019-01-01",
-                content: "Methods for measuring binding affinity between aptamers and their target molecules."
+                content: "Methods for measuring binding affinity between aptamers and their target molecules. Covers various techniques including surface plasmon resonance, isothermal titration calorimetry, and fluorescence polarization."
+            },
+            {
+                title: "Bioinformatics search algorithms",
+                category: "computational",
+                tags: "Type:algorithm, search, bioinformatics",
+                url: "https://github.com/OOAAHH/ribocentre-search-module",
+                date: "2021-01-01",
+                content: "Advanced search algorithms designed for biological databases. Features intelligent relevance scoring, real-time filtering, and optimized performance for large datasets."
             }
         ];
 
-        // 重写SearchUtils.fetchData以使用模拟数据
+        // Override SearchUtils.fetchData to use mock data
         SearchUtils.fetchData = async function(paths) {
             return new Promise(resolve => {
                 setTimeout(() => resolve(mockSearchData), 200);
             });
         };
 
-        // 示例搜索函数
+        // Sample search function
         function performSampleSearch(query) {
             const searchInput = document.getElementById('mainSearch');
             searchInput.value = query;
@@ -212,15 +259,15 @@
             SearchModule.performSearch();
         }
 
-        // 关闭搜索结果
+        // Close search results
         function closeSearchResults() {
             SearchModule.closeSearchResults();
         }
 
-        // 初始化搜索模块
+        // Initialize search module
         document.addEventListener('DOMContentLoaded', () => {
             SearchModule.init();
-            console.log('搜索演示页面加载完成');
+            console.log('Search demo page loaded successfully');
         });
     </script>
 </body>

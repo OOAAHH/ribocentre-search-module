@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ribocentre-Aptamer Search Module</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #e9ecef;
+        }
+        .btn-secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .feature p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .github-link {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        .github-link a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .github-link a:hover {
+            color: #667eea;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔍</div>
+        <h1>Ribocentre-Aptamer Search Module</h1>
+        <p class="subtitle">
+            🧬 A powerful, intelligent search module designed specifically for RNA aptamer databases and bioinformatics research platforms.
+        </p>
+
+        <div class="buttons">
+            <a href="examples/basic_search_demo.html" class="btn btn-primary">
+                🎮 Live Demo
+            </a>
+            <a href="https://github.com/OOAAHH/ribocentre-search-module" class="btn btn-secondary">
+                📚 Documentation
+            </a>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number">4000+</span>
+                <span class="stat-label">Lines of Code</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">&lt;100ms</span>
+                <span class="stat-label">Search Response</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Records Support</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>⚡ Real-time Search</h3>
+                <p>Instant results with advanced relevance scoring algorithm</p>
+            </div>
+            <div class="feature">
+                <h3>🎯 Advanced Filtering</h3>
+                <p>Filter by year, sequence length, GC content, and more</p>
+            </div>
+            <div class="feature">
+                <h3>📱 Responsive Design</h3>
+                <p>Perfect adaptation for desktop and mobile devices</p>
+            </div>
+            <div class="feature">
+                <h3>🧬 Bioinformatics Ready</h3>
+                <p>Specialized for RNA aptamer and sequence databases</p>
+            </div>
+        </div>
+
+        <div class="github-link">
+            <p>🚀 <strong>Quick Start:</strong> <a href="https://github.com/OOAAHH/ribocentre-search-module#quick-start">3-line integration</a> • 
+            <a href="https://github.com/OOAAHH/ribocentre-search-module/releases">Download</a> • 
+            <a href="https://github.com/OOAAHH/ribocentre-search-module/blob/main/search_module_documentation.md">Full Documentation</a></p>
+        </div>
+    </div>
+</body>
+</html> 
